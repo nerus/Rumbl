@@ -1,0 +1,14 @@
+<h1>Showing User</h1>
+<table class="table">
+  	<tr>
+  	<td>ID</td>
+  	<td>NOMBRE</td>
+  	<td>DETALLES</td>
+  	</tr>
+  	<tr>
+  	<td>(<%= @user.id %>)</td>
+  	<td><b><%= @user.name %></b></td>
+  	<td><%= @user.username %></td>
+  	</tr>
+  
+</table>

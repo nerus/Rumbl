@@ -6,6 +6,10 @@
     <strong>User:</strong>
     <%= @video.user_id %>
   </li>
+  <li>
+    <strong>Category:</strong>
+    <%= @video.category.name %>
+  </li>
 
   <li>
     <strong> url:</strong>

@@ -29,6 +29,7 @@ defmodule Rumbl.Router do
     resources "/sessions", SessionController, only: [:new, :create, :delete]
     #pipe_through :auth
     resources "/users", UserController, only: [:index, :show, :new, :create]
+    get "/watch/:id", WatchController, :show
   end
   scope "/manage", Rumbl do
     pipe_through [:browser, :authenticate_user]

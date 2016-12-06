@@ -1,0 +1,20 @@
+{
+  "name": "bower.json",
+  "description": "complete bootstrap to Phoenix",
+  "main": "bower.json",
+  "authors": [
+    "Andres Garcia Morales <andres.garcia@nerus.com.mx>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/nerus/Rumbl",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

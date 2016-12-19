@@ -1,12 +1,28 @@
 <h2><%= @video.title %></h2>
 <div class="row">
+  <!--
   <div class="col-sm-7">
   	<%= content_tag :div, id: "video", 
   		data: [id: @video.id, player_id: player_id(@video)] do %>
-  	<%= end %>
+     	<%= end %>
+    <iframe class="col-xs"
+      src="<%="#{@video.url}"%>" frameborder="0" allowfullscreen>
+     </iframe>
   </div>
+  -->
+  <div class="col-sm-7 embed-responsive embed-responsive-16by9">
+    <%= content_tag :iframe, id: "video", 
+      data: [id: @video.id, player_id: player_id(@video)], src: "https://www.youtube.com/embed/#{player_id(@video)}", frameborder: "0", allowfullscreen: true,  class: "embed-responsive-item"  do %>
+      <%= end %>
+ <!--   <iframe class="col-xs"
+      src="<%="#{@video.url}"%>" frameborder="0" allowfullscreen>
+     </iframe>
+ -->
+  </div>
+
+  <!-- <div class="col-sm-7"><iframe width="560" height="315" src="https://www.youtube.com/embed/aDWZyYHj2XM" frameborder="0" allowfullscreen></ iframe></div> -->
   <div class="col-sm-5">
-  	<div class="panel panel-defaul">
+  	<div class="panel panel-default">
   	  <div class="panel-heading">
   	  	<h3 class="panel-title">Anotaciones</h3>
   	  </div>
@@ -14,7 +30,8 @@
         
       </div>
   	  <div class="panel-footer">
-  	  	<textarea id="msg-input" rows="3" class="form-control" placeholder="Comment..."></textarea>
+  	  	<textarea id="msg-input" rows="5" class="form-control" placeholder="Comment..."></textarea>
+        <h3> </h3>
   	  	<button id="msg-submit" class="btn btn-primary form-control" type="submit">Postear</button>
   	  </div>
   	</div>

@@ -33,9 +33,17 @@
       <td><%= video.title %></td>
 
       <td class="text-right">
-        <%= link "Show", to: watch_path(@conn, :show, video), class: "btn btn-default btn-block btn-xs" %>
-        <%= link "Edit", to: video_path(@conn, :edit, video), class: "btn btn-default btn-block btn-xs" %>
-        <%= link "Delete", to: video_path(@conn, :delete, video), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-block btn-xs" %>
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Actions
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <%= link "Show", to: watch_path(@conn, :show, video), class: "btn btn-link" %>
+          <%= link "Edit", to: video_path(@conn, :edit, video), class: "btn btn-link" %>
+        </ul>
+      </div>
+          <%= link "Delete", to: video_path(@conn, :delete, video), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-block btn-xs" %>
       </td>
     </tr>
     <div>
